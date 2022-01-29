@@ -10,10 +10,15 @@ const NavBar: React.FC<Props> = props => {
 
   return (
     <NavBarStyled>
-      <p>une image ici</p>
-      <h2>Classe de Pierre-Karl</h2>
-      <p> groupe 60x</p>
-
+      <div>
+        <span>"L'éducation est l'arme la plus puissante pour changer le monde."</span>
+        <span>-Nelson Mandela</span>
+      </div>
+      <p>ACCUEIL</p>
+      <p>NOTES DE COURS</p>
+      <p>SEMAINES</p>
+      <p>CAPSULES</p>
+      <p>TESTS</p>
     </NavBarStyled>
   );
 };
