@@ -5,6 +5,7 @@ import Notes from "../components/Notes";
 import Ateliers from "../components/Ateliers";
 import Capsules from "../components/Capsules";
 import Tests from "../components/Tests";
+import AtelierSemaine from "../components/AtelierSemaine";
 
 import { HomePageStyled } from "./styles/HomePage.styles.js";
 
@@ -17,9 +18,10 @@ const HomePage: React.FC<Props> = () => {
       <NavBar navigator={setPage} />
       {page === "ACCUEIL" && <Acceuil />}
       {page === "NOTES" && <Notes />}
-      {page === "ATELIERS" && <Ateliers />}
+      {page === "ATELIERS" && <Ateliers navigator={setPage} />}
       {page === "CAPSULES" && <Capsules />}
       {page === "TESTS" && <Tests />}
+      {page === "AtelierSemaine" && <AtelierSemaine />}
     </HomePageStyled>
   );
 };
