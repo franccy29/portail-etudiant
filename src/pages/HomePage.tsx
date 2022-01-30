@@ -1,22 +1,25 @@
-import * as React from 'react';
+import React, { useState } from "react";
 import NavBar from "../components/NavBar";
+import Acceuil from "../components/Acceuil";
+import Notes from "../components/Notes";
+import Ateliers from "../components/Ateliers";
+import Capsules from "../components/Capsules";
+import Tests from "../components/Tests";
 
-import {HomePageStyled} from "./styles/HomePage.styles.js";
+import { HomePageStyled } from "./styles/HomePage.styles.js";
 
-type Props = {
+type Props = {};
 
-};
-
-const HomePage: React.FC<Props> = props => {
-
-
+const HomePage: React.FC<Props> = () => {
+  const [page, setPage] = useState<string>("ACCUEIL");
   return (
     <HomePageStyled>
-      <NavBar />
-      <p>une image ici</p>
-      <h2>Classe de Pierre-Karl</h2>
-      <p> groupe 60x</p>
-
+      <NavBar navigator={setPage} />
+      {page === "ACCUEIL" && <Acceuil />}
+      {page === "NOTES" && <Notes />}
+      {page === "ATELIERS" && <Ateliers />}
+      {page === "CAPSULES" && <Capsules />}
+      {page === "TESTS" && <Tests />}
     </HomePageStyled>
   );
 };
