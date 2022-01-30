@@ -3,9 +3,15 @@ import AtelierUnique from "./AtelierUnique";
 
 import { AtelierSemaineStyled } from "./styles/AtelierSemaine.styles.js";
 
-type Props = {};
+type Props = {
+  semaine: number;
+};
 
-const data = [
+const data: {
+  id: number;
+  matière: string;
+  titre: string;
+}[] = [
   {
     id: 1,
     matière: "francais",
@@ -23,11 +29,12 @@ const data = [
   },
 ];
 
-const AtelierSemaine: React.FC<Props> = () => {
+const AtelierSemaine: React.FC<Props> = ({ semaine }) => {
   const AtelierArray: JSX.Element[] = [];
   data.forEach((Atelier) => {
     AtelierArray.push(
       <AtelierUnique
+        key={Atelier.id}
         id={Atelier.id}
         matière={Atelier.matière}
         titre={Atelier.titre}
@@ -37,7 +44,7 @@ const AtelierSemaine: React.FC<Props> = () => {
 
   return (
     <AtelierSemaineStyled>
-      <p>atelier de la semaine choisis</p>
+      <p>atelier de la semaine: {semaine}</p>
       {AtelierArray}
     </AtelierSemaineStyled>
   );
