@@ -5,6 +5,7 @@ import { AtelierSemaineStyled } from "./styles/AtelierSemaine.styles.js";
 
 type Props = {
   semaine: number;
+  onClick: (idChoosen: number) => void;
 };
 
 const data: {
@@ -29,8 +30,9 @@ const data: {
   },
 ];
 
-const AtelierSemaine: React.FC<Props> = ({ semaine }) => {
+const AtelierSemaine: React.FC<Props> = ({ semaine, onClick }) => {
   const AtelierArray: JSX.Element[] = [];
+
   data.forEach((Atelier) => {
     AtelierArray.push(
       <AtelierUnique
@@ -38,6 +40,7 @@ const AtelierSemaine: React.FC<Props> = ({ semaine }) => {
         id={Atelier.id}
         matière={Atelier.matière}
         titre={Atelier.titre}
+        onClick={onClick}
       />
     );
   });

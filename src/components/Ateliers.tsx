@@ -1,21 +1,22 @@
 import React, { useState } from "react";
+import AtelierSemaine from "./AtelierSemaine";
 
 import { AteliersStyled } from "./styles/Ateliers.styles.js";
 
 type Props = {
   navigator: (nomDePage: string) => void;
-  weekChange: (numeroDeSemaine: number) => void;
+  AtelierChoisis: (idDeLatelier: number) => void;
 };
 
 const data = {
-  weeks: 5,
+  weeks: 45,
 };
 
-const Ateliers: React.FC<Props> = ({ navigator, weekChange }) => {
+const Ateliers: React.FC<Props> = ({ navigator, AtelierChoisis }) => {
   const weekArray: JSX.Element[] = [];
   const [selector, setSelector] = useState<number>(data.weeks);
 
-  for (let i = 1; i <= data.weeks; i++) {
+  for (let i = data.weeks; i >= 1; i--) {
     weekArray.push(
       <option key={i} value={i}>
         Semaine {i}
@@ -29,9 +30,9 @@ const Ateliers: React.FC<Props> = ({ navigator, weekChange }) => {
     setSelector(Number(e.target.value));
   };
 
-  const onSubmit = (): void => {
-    weekChange(selector);
-    navigator("AtelierSemaine");
+  const chooseAtelier = (idChoosen: number): void => {
+    navigator("OuvrirAtelier");
+    AtelierChoisis(idChoosen);
   };
 
   return (
@@ -40,7 +41,7 @@ const Ateliers: React.FC<Props> = ({ navigator, weekChange }) => {
       <select value={selector} onChange={handleChange}>
         {weekArray}
       </select>
-      <button onClick={onSubmit}>aller!</button>
+      {<AtelierSemaine semaine={selector} onClick={chooseAtelier} />}
     </AteliersStyled>
   );
 };
