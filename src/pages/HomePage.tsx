@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import NavBar from "../components/NavBar";
 import Acceuil from "../components/Acceuil";
-import Notes from "../components/Notes";
-import Ateliers from "../components/Ateliers";
-import Capsules from "../components/Capsules";
-import Tests from "../components/Tests";
-import NotesList from "../components/NotesList";
-import AtelierExercises from "../components/AtelierExercises";
+import Notes from "../notesDeCours/Notes";
+import Ateliers from "../ateliers/Ateliers";
+import Capsules from "../capsules/Capsules";
+import Tests from "../tests/Tests";
+import NotesList from "../notesDeCours/NotesList";
+import AtelierExercises from "../ateliers/AtelierExercises";
 
 import { HomePageStyled } from "./styles/HomePage.styles.js";
 
