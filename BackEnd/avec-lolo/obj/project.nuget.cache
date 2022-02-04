@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5V7Cu8qjZjdHeKUn9dnYtukPMOlgalHhKgw16keSpXDlYcu8/16CVwfjk/qEPRtgrTW5bouwEfo46PZgJ9k1Qg==",
+  "dgSpecHash": "bOusyIWGP3gGuEd7g8zXz7AKz3NbJkC6w0BZGmWlg7UGRNoJNvOiNNFJ0Qt/+68grBD7BBuggU8wMwJ8l7Vm5g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\francois\\source\\repos\\avec-lolo\\avec-lolo\\avec-lolo.csproj",
+  "projectFilePath": "\\\\wsl$\\Ubuntu\\home\\Portail-etudiant\\BackEnd\\avec-lolo\\avec-lolo.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\francois\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\francois\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",

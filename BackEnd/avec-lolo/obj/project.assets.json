@@ -213,11 +213,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\francois\\source\\repos\\avec-lolo\\avec-lolo\\avec-lolo.csproj",
+      "projectUniqueName": "\\\\wsl$\\Ubuntu\\home\\Portail-etudiant\\BackEnd\\avec-lolo\\avec-lolo.csproj",
       "projectName": "avec-lolo",
-      "projectPath": "C:\\Users\\francois\\source\\repos\\avec-lolo\\avec-lolo\\avec-lolo.csproj",
+      "projectPath": "\\\\wsl$\\Ubuntu\\home\\Portail-etudiant\\BackEnd\\avec-lolo\\avec-lolo.csproj",
       "packagesPath": "C:\\Users\\francois\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\francois\\source\\repos\\avec-lolo\\avec-lolo\\obj\\",
+      "outputPath": "\\\\wsl$\\Ubuntu\\home\\Portail-etudiant\\BackEnd\\avec-lolo\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\francois\\AppData\\Roaming\\NuGet\\NuGet.Config",
