@@ -3,7 +3,6 @@ import NavBar from "../components/NavBar";
 import Acceuil from "../components/Acceuil";
 import Notes from "../notesDeCours/Notes";
 import Ateliers from "../ateliers/Ateliers";
-import Capsules from "../capsules/Capsules";
 import Tests from "../tests/Tests";
 import NotesList from "../notesDeCours/NotesList";
 import AtelierExercises from "../ateliers/AtelierExercises";
@@ -29,7 +28,6 @@ const HomePage: React.FC<Props> = () => {
         <Ateliers navigator={setPage} AtelierChoisis={setAtelier} />
       )}
       {page === "OuvrirAtelier" && <AtelierExercises atelierId={atelier} />}
-      {page === "CAPSULES" && <Capsules />}
       {page === "TESTS" && <Tests />}
     </HomePageStyled>
   );

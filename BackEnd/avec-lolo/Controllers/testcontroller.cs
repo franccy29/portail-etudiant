@@ -6,9 +6,9 @@ namespace portail_ecole.Controllers
     [Route("[controller]")]
     public class testcontroller : ControllerBase
     {
-      private static List<test> heroes = new List<test>
+      private static List<Test> heroes = new List<Test>
             {
-              new test {
+              new Test {
                 Id= 1,
                 Name = "spider",
                 FirstName = "pete",
@@ -18,7 +18,7 @@ namespace portail_ecole.Controllers
             };
 
         [HttpGet]
-        public async Task<ActionResult<test>> Get()
+        public async Task<ActionResult<Test>> Get()
         {
             return Ok(heroes);
         }

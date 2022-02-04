@@ -7,7 +7,7 @@ type Props = {};
 const Tests: React.FC<Props> = (props) => {
   return (
     <TestsStyled>
-      <p>Tests</p>
+      <p>Reste à faire dans le future</p>
     </TestsStyled>
   );
 };

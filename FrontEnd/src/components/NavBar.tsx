@@ -38,13 +38,6 @@ const NavBar: React.FC<Props> = ({ navigator }) => {
       </p>
       <p
         onClick={() => {
-          navigator("CAPSULES");
-        }}
-      >
-        CAPSULES
-      </p>
-      <p
-        onClick={() => {
           navigator("TESTS");
         }}
       >
