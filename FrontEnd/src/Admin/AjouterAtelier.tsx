@@ -16,6 +16,7 @@ const AjouterAtelier: React.FC<Props> = ({ navigator }) => {
         pi apres avoir infini de question ajoutable que tu choose entre text ou
         choix de reponse
       </p>
+      <p>Demander pour quel semaine</p>
     </AjouterAtelierStyled>
   );
 };

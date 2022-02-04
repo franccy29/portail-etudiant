@@ -15,6 +15,7 @@ const AjouterNotes: React.FC<Props> = ({ navigator }) => {
         faire un formulaire qui demande la matiere, si cest un pdf ou un video,
         avoir le titre aussi et pt description, pas sur
       </p>
+      <p>Demander pour quel semaine</p>
     </AjouterNotesStyled>
   );
 };
