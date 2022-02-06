@@ -8,39 +8,26 @@ type Props = {
 };
 
 const AjouterAtelier: React.FC<Props> = ({ navigator }) => {
-  const [numQuestions, setNumQuestions] = useState<number>(0);
-  const [questionArray, setQuestionArray] = useState<JSX.Element[]>([]);
+  const [questionArray, setQuestionArray] = useState<JSX.Element[]>([
+    <FaireAtelier key={1} envoyerQuestion={ajouterQuestions} />,
+  ]);
   const [semaineChoisis, setSemaineChoisis] = useState<number>(0);
   const [titre, setTitre] = useState<string>("");
 
-  const renderNombreQuestions = (): JSX.Element => {
-    const handleChange = (input: {
-      target: { value: React.SetStateAction<string> };
-    }): void => {
-      if (!isNaN(Number(input.target.value))) {
-        setNumQuestions(Number(input.target.value));
-      }
-    };
-
-    const createQuestions = (num: number): void => {
-      for (let i = num; i > 0; i--) {
-        setQuestionArray((oldArray) => [...oldArray, <FaireAtelier key={i} />]);
-      }
-    };
-
-    return (
-      <div>
-        <p>combien de questions dans ton test?</p>
-        <input
-          placeholder={String(numQuestions)}
-          onChange={handleChange}
-          value={numQuestions}
-        />
-        <button onClick={() => createQuestions(numQuestions)}>
-          Set a ce nombre de questions la
-        </button>
-      </div>
-    );
+  const atelierPourBdd: {
+    semaine: number;
+    titre: string;
+    questions: {
+      type: number;
+      img?: string;
+      question: string;
+      reponse: string | number;
+      choix?: string[];
+    }[];
+  } = {
+    semaine: semaineChoisis,
+    titre: titre,
+    questions: [],
   };
 
   const handleSemaine = (input: {
@@ -51,6 +38,41 @@ const AjouterAtelier: React.FC<Props> = ({ navigator }) => {
     }
   };
 
+  function ajouterQuestions(
+    type: number,
+    question: string,
+    reponse: string | number,
+    choix?: string[],
+    img?: string
+  ): void {
+    let objetQuestion: {
+      type: number;
+      img?: string;
+      question: string;
+      reponse: string | number;
+      choix?: string[];
+    } = {
+      type,
+      question,
+      reponse,
+    };
+    if (img) {
+      objetQuestion.img = img;
+    }
+    if (type === 2) {
+      objetQuestion.choix = choix;
+    }
+    atelierPourBdd.questions.push(objetQuestion);
+    setQuestionArray((oldArray) => [
+      ...oldArray,
+      <FaireAtelier
+        key={oldArray.length + 1}
+        envoyerQuestion={ajouterQuestions}
+      />,
+    ]);
+    console.log(atelierPourBdd);
+  }
+
   return (
     <AjouterAtelierStyled>
       <h1>ajoute un atelier ici</h1>
@@ -59,6 +81,12 @@ const AjouterAtelier: React.FC<Props> = ({ navigator }) => {
         faire un formulaire qui demande la matiere, si cest un test ou atelier
         pi apres avoir infini de question ajoutable que tu choose entre text ou
         choix de reponse
+      </p>
+
+      <p>
+        La semaien et le titre update pas dans lobjet...live je me dit de el
+        faire en useState avec un set state qui prend le old object a chaque on
+        change du input might work, pas sur, a voir!
       </p>
       <p>quel titre va avoir ton exercises?</p>
       <input
@@ -72,7 +100,7 @@ const AjouterAtelier: React.FC<Props> = ({ navigator }) => {
         onChange={handleSemaine}
         value={semaineChoisis}
       />
-      {questionArray[0] ? questionArray : renderNombreQuestions()}
+      {questionArray && questionArray}
     </AjouterAtelierStyled>
   );
 };
