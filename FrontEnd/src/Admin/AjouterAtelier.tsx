@@ -11,6 +11,7 @@ const AjouterAtelier: React.FC<Props> = ({ navigator }) => {
   const [numQuestions, setNumQuestions] = useState<number>(0);
   const [questionArray, setQuestionArray] = useState<JSX.Element[]>([]);
   const [semaineChoisis, setSemaineChoisis] = useState<number>(0);
+  const [titre, setTitre] = useState<string>("");
 
   const renderNombreQuestions = (): JSX.Element => {
     const handleChange = (input: {
@@ -29,6 +30,7 @@ const AjouterAtelier: React.FC<Props> = ({ navigator }) => {
 
     return (
       <div>
+        <p>combien de questions dans ton test?</p>
         <input
           placeholder={String(numQuestions)}
           onChange={handleChange}
@@ -58,13 +60,18 @@ const AjouterAtelier: React.FC<Props> = ({ navigator }) => {
         pi apres avoir infini de question ajoutable que tu choose entre text ou
         choix de reponse
       </p>
+      <p>quel titre va avoir ton exercises?</p>
+      <input
+        placeholder={titre}
+        onChange={(e) => setTitre(e.target.value)}
+        value={titre}
+      />
       <p>La question est pour quelle semaine?</p>
       <input
         placeholder={String(semaineChoisis)}
         onChange={handleSemaine}
         value={semaineChoisis}
       />
-      <p>comien de questions dans ton test?</p>
       {questionArray[0] ? questionArray : renderNombreQuestions()}
     </AjouterAtelierStyled>
   );

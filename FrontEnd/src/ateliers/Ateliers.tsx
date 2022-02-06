@@ -8,7 +8,7 @@ type Props = {
   AtelierChoisis: (idDeLatelier: number) => void;
 };
 
-const data = {
+const data: { weeks: number } = {
   weeks: 45,
 };
 
