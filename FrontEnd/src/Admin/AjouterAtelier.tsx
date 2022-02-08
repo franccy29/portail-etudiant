@@ -73,6 +73,10 @@ const AjouterAtelier: React.FC<Props> = ({ navigator }) => {
     console.log(atelierPourBdd);
   }
 
+  const saveAtelier = (): void => {
+    console.log("envoyer un post de lobjet a la bdd: ", atelierPourBdd);
+  };
+
   return (
     <AjouterAtelierStyled>
       <h1>ajoute un atelier ici</h1>
@@ -101,6 +105,7 @@ const AjouterAtelier: React.FC<Props> = ({ navigator }) => {
         value={semaineChoisis}
       />
       {questionArray && questionArray}
+      <button onClick={saveAtelier}>finito pipo, tout est fait</button>
     </AjouterAtelierStyled>
   );
 };
